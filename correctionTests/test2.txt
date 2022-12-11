@@ -1,0 +1,33 @@
+#This is a basic test with u = 0.3, epsilon = 0.01 sec, n = 4, k = 5
+#The time differences between invocations is much larger than u
+1, 0, Enq, 1
+2, 1, Enq, 2
+4, 1, Deq, -1
+5, 2, Enq, 3
+8, 0, Enq, 4
+10, 2, Enq, 5
+11, 1, Enq, 6
+13, 2, Deq, -1
+15, 2, Enq, 7
+16, 0, Enq, 8
+17, 0, Enq, 9
+20, 2, Enq, 10
+22, 1, Deq, -1
+25, 3, Enq, 11
+26, 0, Enq, 12
+26, 2, Deq, -1
+29, 1, Enq, 13
+31, 2, Deq, -1
+32, 1, Deq, -1
+34, 2, Enq, 14
+36, 0, Enq, 15
+38, 1, Enq, 16
+39, 1, Deq, -1
+42, 3, Deq, -1
+44, -1,Ter, -1
+#Following the invocations by hand, the resulting queue should be [8, 10, 11, 12, 13, 14, 15, 16]
+#Actual Result:
+#Process:  0  The local Queue [Flattened]:  [8, 10, 11, 12, 13, 14, 15, 16]
+#Process:  3  The local Queue [Flattened]:  [8, 10, 11, 12, 13, 14, 15, 16]
+#Process:  1  The local Queue [Flattened]:  [8, 10, 11, 12, 13, 14, 15, 16]
+#Process:  2  The local Queue [Flattened]:  [8, 10, 11, 12, 13, 14, 15, 16]

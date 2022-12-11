@@ -1,0 +1,6 @@
+acet116-lnx-10.bucknell.edu
+acet116-lnx-7.bucknell.edu
+acet116-lnx-5.bucknell.edu
+acet116-lnx-6.bucknell.edu
+acet116-lnx-4.bucknell.edu
+

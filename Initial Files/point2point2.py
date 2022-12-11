@@ -1,0 +1,7 @@
+import MPI
+import time
+import socket
+from time import sleep # name = socket.gethostbyname(socket.gethostname()) comm = MPI.COMM_WORLD rank = comm.Get_rank() p = comm.Get_size() msgStartTime = 0 msgEndTime = 0 print('rank: ',rank) # print('hostname: ',name) reqs = [] # Non-blocking send/receive if rank == 0: for i in range(p): msgStartTime = time.time() reqs.append(comm.isend(msgStartTime, dest=i,tag=1)) # print("Process: ", rank, 'sent') req = comm.irecv(source=0,tag=1)
+while True: startTime = req.test() if startTime[0]: msgEndTime = time.time() msgTime = msgEndTime - startTime[1] print("Process: ", rank, "Message Time is sec: ", msgTime) break # print("Process: ", rank, 'received: ') for req in reqs: req.wait() rom mpi4py import MPI import time import socket from time import sleep # name = socket.gethostbyname(socket.gethostname()) comm = MPI.COMM_WORLD rank = comm.Get_rank() p = comm.Get_size() msgStartTime = 0 msgEndTime = 0 print('rank: ',rank)
+# print('hostname: ',name) reqs = [] # Non-blocking send/receive if rank == 0: for i in range(p): msgStartTime = time.time() reqs.append(comm.isend(msgStartTime, dest=i,tag=1)) # print("Process: ", rank, 'sent') req = comm.irecv(source=0,tag=1) while True: startTime = req.test() if startTime[0]: msgEndTime = time.time() msgTime = msgEndTime - startTime[1] print("Process: ", rank, "Message Time is sec: ", msgTime) break # print("Process: ", rank, 'received: ') for req in reqs:
+# req.wait()
