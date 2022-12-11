@@ -7,7 +7,7 @@ Algorithm implementation for a k-out-of-order relaxed queue in a partially synch
 Based on Algorithm 1 from:
 E. Talmage and J. L. Welch, “Improving average performance by relaxing distributed data structures,” Lecture Notes in Computer Science, pp. 421–438, 2014.
 
-#Usage:
+# Usage:
 To run the Algorithm, first you need to have mpi4py library installed on your device 
 for information on how to install the library please visit: https://mpi4py.readthedocs.io/en/stable/install.html
 
